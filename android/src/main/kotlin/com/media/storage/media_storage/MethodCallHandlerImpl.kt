@@ -57,7 +57,7 @@ class MethodCallHandlerImpl(private val context: Context) :
 	var al_filepath: ArrayList<String> = ArrayList<String>()
 
 	val allDatamodel: AllData = AllData()
-	lateinit var mresult: MethodChannel.Result
+	var mresult: MethodChannel.Result? = null
 
 	var allDataList: ArrayList<AllData> = ArrayList<AllData>()
 	private var TAG: String = "MethodCallHandlerImpl"
@@ -94,7 +94,7 @@ class MethodCallHandlerImpl(private val context: Context) :
 			}
 			"deleteFile" ->{
 				mresult =result
-				deleteFile(call.argument<String>("deletepath"),mresult)
+				deleteFile(call.argument<String>("deletepath"),mresult!!)
 			}
 			/*"deleteDir" ->{
 				mresult =result
@@ -103,7 +103,7 @@ class MethodCallHandlerImpl(private val context: Context) :
 			}*/
 			"createDirectory" ->{
 				mresult =result
-				createDirectory(call.argument<String>("createfolderpath"),call.argument<String>("foldername"),mresult)
+				createDirectory(call.argument<String>("createfolderpath"),call.argument<String>("foldername"),mresult!!)
 			}
 
 
@@ -284,11 +284,11 @@ class MethodCallHandlerImpl(private val context: Context) :
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
 		if (resultCode == Activity.RESULT_OK && requestCode == DELETE_PERMISSION_REQUEST) {
-			mresult.success(true)
+			mresult?.success(true)
 
 			Log.e(TAG, "onActivityResult: " )
 		}else{
-			mresult.success(false)
+			mresult?.success(false)
 		}
 		return isDeleted
 	}
