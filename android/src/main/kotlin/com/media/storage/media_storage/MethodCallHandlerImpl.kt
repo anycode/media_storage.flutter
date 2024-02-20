@@ -93,8 +93,8 @@ class MethodCallHandlerImpl(private val context: Context) :
 				result.success(getMediaStoreData(call.argument<String>("path")))
 			}
 			"deleteFile" ->{
-				mresult =result
-				deleteFile(call.argument<String>("deletepath"),mresult!!)
+				//mresult =result
+				deleteFile(call.argument<String>("deletepath"),result)
 			}
 			/*"deleteDir" ->{
 				mresult =result
@@ -102,8 +102,8 @@ class MethodCallHandlerImpl(private val context: Context) :
 
 			}*/
 			"createDirectory" ->{
-				mresult =result
-				createDirectory(call.argument<String>("createfolderpath"),call.argument<String>("foldername"),mresult!!)
+				//mresult =result
+				createDirectory(call.argument<String>("createfolderpath"),call.argument<String>("foldername"),result)
 			}
 
 
@@ -285,10 +285,12 @@ class MethodCallHandlerImpl(private val context: Context) :
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
 		if (resultCode == Activity.RESULT_OK && requestCode == DELETE_PERMISSION_REQUEST) {
 			mresult?.success(true)
+			mresult = null
 
 			Log.e(TAG, "onActivityResult: " )
 		}else{
 			mresult?.success(false)
+			mresult = null
 		}
 		return isDeleted
 	}
