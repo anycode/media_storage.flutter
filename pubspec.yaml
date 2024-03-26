@@ -1,9 +1,9 @@
 name: media_storage
 description: Flutter plugin that provides internal, external storage path and external public storage path and get all or specific Directory files list with all file informations.
-version: 0.0.1
+version: 0.1.1
 homepage: https://github.com/Khuntarpit
 repository: https://github.com/Khuntarpit/media_storage
-
+publish_to: https://onepub.dev/api/xvpssdavuh/
 
 environment:
   sdk: ">=2.17.1 <3.0.0"

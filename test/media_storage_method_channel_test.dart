@@ -1,21 +1,21 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:media_storage/media_storage_method_channel.dart';
+import 'package:media_storage/src/media_storage_method_channel.dart';
 
 void main() {
   MethodChannelMediaStorage platform = MethodChannelMediaStorage();
   const MethodChannel channel = MethodChannel('media_storage');
 
-  TestWidgetsFlutterBinding.ensureInitialized();
+  final tester = TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
+    tester.defaultBinaryMessenger.setMockMethodCallHandler(channel, (MethodCall methodCall) async {
       return '42';
     });
   });
 
   tearDown(() {
-    channel.setMockMethodCallHandler(null);
+    tester.defaultBinaryMessenger.setMockMethodCallHandler(channel, null);
   });
 
   test('getPlatformVersion', () async {

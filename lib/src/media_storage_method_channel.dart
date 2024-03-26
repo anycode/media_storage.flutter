@@ -7,7 +7,7 @@ import 'media_storage_platform_interface.dart';
 class MethodChannelMediaStorage extends MediaStoragePlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  static const methodChannel = const MethodChannel('media_storage');
+  static const methodChannel = MethodChannel('media_storage');
 
 
   @override
