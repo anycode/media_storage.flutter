@@ -5,7 +5,7 @@ description: >-
 version: 0.1.2
 homepage: https://github.com/Khuntarpit
 repository: https://github.com/Khuntarpit/media_storage
-publish_to: 'none'
+publish_to: https://pub.anycode.dev
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
@@ -19,7 +19,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
+  flutter_lints: ^3.0.2
 
 
 # For information on the generic Dart part of this file, see the
