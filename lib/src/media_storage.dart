@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:media_storage/src/media_storage_file.dart';
 
+import 'media_storage_file.dart';
 import 'media_storage_platform_interface.dart';
 
 class MediaStorage {

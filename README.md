@@ -1,38 +1,45 @@
 # media_storage
 
-
 media_storage is a flutter plugin that provides internal, external storage path and external public storage path.
 
-https://pub.dev/packages/media_storage
+
+
+## Package name change
+
+The original package [*media_storage*](https://pub.dev/packages/media_storage)
+is still available on pub.dev but seems not to be maintained. There's my PR to
+fix lateinit but not accepted yet.
+
+That's why I published my version as [*ac_media_storage*](https://pub.dev/packages/ac_media_storage).
 
 ## Features
 
 `MediaStorage.getExternalStoragePublicDirectory()` needs Public Directory Type argument
 Below given table contains the types of argument you can pass to `getExternalStoragePublicDirectory()` function
 
-| MediaStorage                         |
-| ------------------------------------ |
-| MediaStorage.DIRECTORY_MUSIC         |
-| MediaStorage.DIRECTORY_PODCASTS      |
-| MediaStorage.DIRECTORY_RINGTONES     |
-| MediaStorage.DIRECTORY_ALARMS        |
-| MediaStorage.DIRECTORY_NOTIFICATIONS |
-| MediaStorage.DIRECTORY_PICTURES      |
-| MediaStorage.DIRECTORY_MOVIES        |
-| MediaStorage.DIRECTORY_DOWNLOADS     |
-| MediaStorage.DIRECTORY_DCIM          |
-| MediaStorage.DIRECTORY_DOCUMENTS     |
-| MediaStorage.DIRECTORY_SCREENSHOTS   |
-| MediaStorage.DIRECTORY_AUDIOBOOKS    |
+| MediaStorage                        |
+|-------------------------------------|
+| MediaStorage.directoryMusic         |
+| MediaStorage.directoryPodcasts      |
+| MediaStorage.directoryRingtones     |
+| MediaStorage.directoryAlarms        |
+| MediaStorage.directoryNotifications |
+| MediaStorage.directoryPictures      |
+| MediaStorage.directoryMovies        |
+| MediaStorage.directoryDownloads     |
+| MediaStorage.directoryDcim          |
+| MediaStorage.directoryDocuments     |
+| MediaStorage.directoryScreenshots   |
+| MediaStorage.directoryAudiobooks    |
 
 ## Usage
 
-First Add `media_storage` as a dipendency in your project `pubspeck.yaml`.
+First Add `ac_media_storage` as a dependency in your project `pubspec.yaml`.
 
-Then, import `media_storage` package.
+Then, import `ac_media_storage` package.
 
 ```dart
-import 'package:media_storage/media_storage.dart';
+import 'package:ac_media_storage/ac_media_storage.dart';
 ```
 
 Package has these functions
@@ -56,7 +63,7 @@ Package has these functions
 
   // To get public storage directory path
   Future<void> getPath_2() async {
-    var path = await MediaStorage.getExternalStoragePublicDirectory(MediaStorage.DIRECTORY_DOWNLOADS);
+    var path = await MediaStorage.getExternalStoragePublicDirectory(MediaStorage.directoryDownloads);
     print(path);  // /storage/emulated/0/Download
   }
 ```
