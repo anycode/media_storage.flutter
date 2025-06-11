@@ -1,6 +1,6 @@
+import 'package:ac_media_storage/ac_media_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:media_storage/src/media_storage_method_channel.dart';
 
 void main() {
   MethodChannelMediaStorage platform = MethodChannelMediaStorage();

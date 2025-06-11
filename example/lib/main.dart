@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:media_storage/media_storage.dart';
+import 'package:ac_media_storage/ac_media_storage.dart';
 
 void main() {
   runApp(const MyApp());

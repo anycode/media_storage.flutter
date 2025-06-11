@@ -1,5 +1,5 @@
+import 'package:ac_media_storage/ac_media_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:media_storage/media_storage.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockMediaStoragePlatform 
